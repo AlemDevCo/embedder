@@ -41,8 +41,13 @@
 
     <script>
         function embedWebsite() {
-            const url = document.getElementById("url-input").value;
-            if (url) {
+            const urlInput = document.getElementById("url-input");
+            let url = urlInput.value.trim();
+            if (url !== "") {
+                // Check if the URL starts with http:// or https://
+                if (!url.match(/^https?:\/\//i)) {
+                    url = "http://" + url;
+                }
                 const embedContainer = document.getElementById("embed-container");
                 embedContainer.innerHTML = `<iframe id="embed-frame" src="${url}"></iframe>`;
             }
