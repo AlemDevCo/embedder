@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Embed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        #embed-container {
+            padding: 20px;
+        }
+        #embed-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Website Embed</h1>
+        <p>Enter a URL below to embed:</p>
+        <input type="text" id="url-input" placeholder="Enter URL">
+        <button onclick="embedWebsite()">Embed</button>
+        <div id="embed-container">
+            <!-- The embedded website will appear here -->
+        </div>
+    </div>
+
+    <script>
+        function embedWebsite() {
+            const url = document.getElementById("url-input").value;
+            if (url) {
+                const embedContainer = document.getElementById("embed-container");
+                embedContainer.innerHTML = `<iframe id="embed-frame" src="${url}"></iframe>`;
+            }
+        }
+    </script>
+</body>
+</html>
