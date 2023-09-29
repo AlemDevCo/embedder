@@ -45,7 +45,7 @@
             let url = urlInput.value.trim();
             if (url !== "") {
                 // Check if the URL starts with http:// or https://
-                if (!url.match(/^https?:\/\//i)) {
+                if (!/^(https?|ftp):\/\//i.test(url)) {
                     url = "http://" + url;
                 }
                 const embedContainer = document.getElementById("embed-container");
